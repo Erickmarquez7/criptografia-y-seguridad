@@ -1,2 +1,9 @@
 # criptografia-y-seguridad
-Repositoria para la materia de criptografia y seguridada
+Repositorio para la materia de criptografia y seguridada
+
+
+## Integrantes
+Bernal Márquez Erick
+
+
+![alt text](dominios-ciberseguridad.png "Logo Title Text 1")
