@@ -1,3 +1,6 @@
+import re
+from textwrap import wrap
+
 '''Lee el archivo en bytes y nos regresa la lista en numeros base 10'''
 def leer_archivo():
     archivo_lol = input("Dime le nombre del archivo: ")
@@ -17,13 +20,14 @@ def leer_archivo():
 y lo transforma a base 16 para poder escribir los bytes'''
 #def escribir_archivo(lista):
 
+
     
 
 '''descifrado cesar, reciba la lista de numeros en base 10
 y los descrifa en esa misma base'''
 def cesar(lista):
-    #no c si la llave sea 63 xd solo lo supuse xd
-    des = list(map((lambda x:(x+63)%256),lista))
+    #no c si la llave sea xd solo lo supuse xd
+    des = list(map((lambda x:(x-96)%256),lista))
     return des
 
     
@@ -35,6 +39,33 @@ def cesar(lista):
 
 
 lista_cif = leer_archivo()
-lista_des = cesar(lista_cif)
-hexa = bytes(lista_des)
+lista_cif=lista_cif[:-1]
+binarios = []
+for n in lista_cif:
+    binarios.append(bin(n)[2:])
+#print(binarios)
+
+ceros_unos = ''
+for b in binarios:
+    ceros_unos+=str(b)
+#print(ceros_unos)
+
+#ceros_unos_8=re.finditer('.{1,2,3,4,5,6,7,8}',ceros_unos)
+ceros_unos_8=wrap(ceros_unos,8)
+#print(ceros_unos_8)
+
+hexa = []
+for n in ceros_unos_8:
+    hexa.append(hex(int(n,2)))
+
 print(hexa)
+#print(lista_cif[:-1])
+
+#print(lista_cif)
+#lista_des = cesar(lista_cif)
+#hexa = bytes(lista_des)
+#print(lista_cif)
+
+
+#f = open('test.xd', 'wb')
+#f.write(hexa)
