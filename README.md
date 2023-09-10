@@ -12,6 +12,7 @@ Bernal Márquez Erick
 
 1. [Man in the middle](practicas/practica-1/practica1.pdf)
 2. [Correos cifrados](practicas/practica-2/practica2.pdf)
+3. [Cifrados clásicos](practicas/practica-3/practica3.pdf)
 
 ### Tareas
 
