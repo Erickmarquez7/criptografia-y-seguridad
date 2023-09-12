@@ -1,4 +1,3 @@
-import re
 from textwrap import wrap
 
 '''Lee el archivo en bytes y nos regresa la lista en numeros base 10'''
@@ -75,46 +74,10 @@ def base_64(lista_cif):
 
 
 # leemos y desciframos el archivo 2 con base 64
-#lista_cif_base = leer_archivo()
-#lista_des_base = base_64(lista_cif_base)
-#escribir_archivo(lista_des_base, 'file2.jpg')
+lista_cif_base = leer_archivo()
+lista_des_base = base_64(lista_cif_base)
+escribir_archivo(lista_des_base, 'file2.jpg')
 
-lista_cif_afin = leer_archivo()
-lista_des_afin = afin(lista_cif_afin)
-escribir_archivo(lista_des_afin, 'file3.mp3')
-
-#lista_cif_base = leer_archivo()
-#lista_des_base = base_64(lista_cif_base)
-#print(lista_des_base)
-
-
-#lista_cif=lista_cif[:-1]
-#binarios = []
-#for n in lista_cif:
-#    binarios.append(bin(n))
-#print(binarios)
-
-#ceros_unos = ''
-#for b in binarios:
-#    ceros_unos+=str(b)
-#print(ceros_unos)
-
-#ceros_unos_8=re.finditer('.{1,2,3,4,5,6,7,8}',ceros_unos)
-#ceros_unos_8=wrap(ceros_unos,8)
-#print(ceros_unos_8)
-
-##hexa = []
-#for n in ceros_unos_8:
-#    hexa.append(hex(int(n,2)))
-
-#print(hexa)
-#print(lista_cif[:-1])
-
-#print(lista_cif)
-#lista_des = cesar(lista_cif)
-#hexa = bytes(lista_des)
-#print(lista_cif)
-
-
-#f = open('test.xd', 'wb')
-#f.write(hexa)
+#lista_cif_afin = leer_archivo()
+#lista_des_afin = afin(lista_cif_afin)
+#escribir_archivo(lista_des_afin, 'file3.mp3')
