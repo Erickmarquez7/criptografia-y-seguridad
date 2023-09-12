@@ -23,6 +23,7 @@ def escribir_archivo(des, nombre):
     bts = []
     for b in des:
         bts.append(hex(b))
+        #print(hex(b))
     file = open('archivos-descifrados/'+nombre, 'wb')
     file.write(des)
     file.close()
@@ -31,16 +32,16 @@ def escribir_archivo(des, nombre):
 '''descifrado cesar, reciba la lista de numeros en base 10
 y los descrifa en esa misma base'''
 def cesar(lista):
-    des = bytes(list(map((lambda x:(x-69)%256),lista)))
+    des = bytes(list(map((lambda x:(x+187)%256),lista)))
     return des
 
-    
+
 '''descifrado afin'''    
 def afin(lista):
-    des = bytes(list(map((lambda x:((x*91)+182)%256),lista)))
+    des = bytes(list(map((lambda x:((x-182)*211)%256),lista)))
     return des
 
-    
+
 '''descrifrado base 64'''
 def base_64(lista_cif):
     binarios = []
@@ -59,14 +60,13 @@ def base_64(lista_cif):
         hexa.append(int(n,2))
     
     g = bytes(list(hexa))
+    #print(g)
 
     return g
     #file = open('archivos-descifrados/file2', 'wb')
     #file.write(g)
     #file.close()
 
-    
-    
 
 # leemos y desciframos el archivo 1 con cesar
 #lista_cif_cesar = leer_archivo()
